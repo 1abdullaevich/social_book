@@ -1,0 +1,104 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="head_page">
+        <div class="container">
+            <div class="row">
+                <div class="flow_img text-center">
+                    <h1>ЛИЧНЫЙ КАБИНЕТ</h1>
+                </div>
+
+                <div class="registration_box">
+                    <h1>Личные данные</h1>
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="main_sides d-flex col-10 m-auto">
+                            <div class="col-12 m-auto col-lg-3 mt-0">
+                                <div {% if user.image_url %}
+                                    style="background-image: url({{ user.image_url }});" {% endif %} id="avatarPreview"
+                                    class="img_back m-auto m-lg-0">
+                                    <label for="avatar"></label>
+                                </div>
+                                {{ form.avatar }}
+
+                                <div class="gender col-12 col-lg-10 pt-4 d-grid justify-content-center align-items-center">
+                                    <label for="male">
+                                        <img src="{% static 'main/img/boy.png' %}" alt="">
+                                    </label>
+                                    <label for="female">
+                                        <img src="{% static 'main/img/girl.png' %}" alt="">
+                                    </label>
+                                    <input id="male" type="radio" name="gender"/>
+                                    <input id="female" type="radio" name="gender"/>
+                                </div>
+                            </div>
+
+                            <div class="s_side offset-lg-1 col-12 col-lg-8">
+
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput"
+                                           placeholder="first name">
+                                    <label for="floatingInput">Ваше имя пользователя</label>
+                                    {% for error in form.username.errors %}
+                                        <span class="text-danger mb-3">{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput"
+                                           placeholder="first name">
+                                    <label for="floatingInput">Ваше имя</label>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput"
+                                           placeholder="last name">
+
+                                    <label for="floatingInput">Ваша фамилия</label>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput"
+                                    placeholder="phone">
+                                    {{ form.phone_number }}
+                                    <label for="floatingInput">Ваш номер телефона</label>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInput"
+                                    placeholder="email">
+                                    <label for="floatingInput">Ваш Е-mail</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="th_side d-flex col-10 col-lg-10 m-auto">
+                            <div class="col-12 col-lg-6">
+                                <div class="form-floating mb-3">
+                                    <input type="date" class="form-control" id="floatingInput"
+                                           placeholder="b-day">
+                                    <label for="floatingInput">Дата рождения</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 ps-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput"
+                                           placeholder="address">
+                                    <label for="floatingInput">Ваш адрес</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="conf_save pb-4 d-flex align-items-center justify-content-between col-10 m-auto">
+                            <div class="col-12 col-lg-6 d-flex align-items-center">
+                                <p>Хочу получать письма с новостями на электронный адрес</p>
+                            </div>
+                            <div class="d-flex align-items-center my-3">
+                                <button class="btn btn-success text-dark px-4 py-2">СОХРАНИТЬ</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

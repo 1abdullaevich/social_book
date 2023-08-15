@@ -1,0 +1,117 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="konkrus">
+        <div class="container">
+            <div class="row">
+                <div class="konkrus_backgr col-12">
+                    <div class="konkrus_text py-5 col-10 m-auto">
+                        <h1>Участья на конкурс</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            <br>
+                            ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        </p>
+                        <div class="d-flex align-items-center my-5">
+                            <button class="btn px-5 py-2">подробное</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="konkrus_anketa col-12">
+                    <div class="col-10 m-auto">
+                        <h1>АНКЕТА</h1>
+                        <p>пожалуйста, заполните эту форму, чтобы создать учетную запись</p>
+                        <hr>
+                        <form action="" method="post" class="mt-4">
+                            {% csrf_token %}
+                            <div class="st_side d-flex">
+                                <div class="col-12 col-lg-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput"
+                                               placeholder="first name">
+                                        <label for="floatingInput">Имя</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput"
+                                               placeholder="last name">
+                                        <label for="floatingInput">Фамилия</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nd_side d-flex col-lg-12">
+                                <div class="form-floating w-100">
+                                    <select class="form-select pb-0 pt-2" id="floatingSelect"
+                                            aria-label="Floating label select example">
+                                        <option selected></option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                    </select>
+                                    <label for="floatingSelect">Лет</label>
+                                </div>
+                            </div>
+                            <div class="nd_side d-flex col-lg-12">
+
+                                <div class="form-floating w-100">
+                                    <select class="form-select pb-0 pt-2" id="floatingSelect"
+                                            aria-label="Floating label select example">
+                                        <option selected></option>
+                                        <option value="5">smth</option>
+                                        <option value="6">something</option>
+                                        <option value="7">Lorem</option>
+                                    </select>
+                                    <label for="floatingSelect">Категория конкурс</label>
+                                </div>
+                            </div>
+                            <div class="nd_side d-flex col-lg-12">
+
+                                <div class="form-floating w-100">
+                                    <select class="form-select pb-0 pt-2" id="floatingSelect"
+                                            aria-label="Floating label select example">
+                                        <option selected></option>
+                                        <option value="tosh">Ташкент</option>
+                                        <option value="vil_tosh">г.Ташкент</option>
+                                    </select>
+                                    <label for="floatingSelect">Город</label>
+                                </div>
+
+                            </div>
+                            <div class="st_side d-flex col-12 col-lg-12" id="st_side">
+                                <div class="form-floating col-12 mb-3">
+                                    <input type="tel" class="form-control" id="floatingInput"
+                                           placeholder="phone" pattern="[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}">
+                                    <label for="floatingInput">Телефон</label>
+                                </div>
+                            </div>
+                            <div class="gender col-12 col-lg-2 pb-2 d-grid justify-content-center align-items-center">
+                                <img src="{% static 'main/img/boy.png' %}" alt="">
+                                <img src="{% static 'main/img/girl.png' %}" alt="">
+                                <input type="radio" name="gender"/>
+                                <input type="radio" name="gender"/>
+                            </div>
+
+                            <div class="form-floating mb-3 col-12 col-lg-12">
+                                <textarea class="form-control" placeholder="Leave a comment here"
+                                          id="floatingTextarea2Disabled"></textarea>
+                                <label for="floatingTextarea2Disabled">Ваш коммент...</label>
+                            </div>
+
+                            <div class="zapomnit col-12 col-lg-6 d-flex align-items-center">
+                                <input type="checkbox" name="remember"/>
+                                <p>Запомнить</p>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <button class="btn btn-success text-dark  py-2">OK</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="unver_box px-md-4 mt-4 pb-5">
+        <div class="container">
+            <div class="registration main_padding">
+                <h1 class="reg_h1">РЕГИСТРАЦИЯ</h1>
+            </div>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="registration_form px-2 py-4 p-md-5 mb-5">
+                    <div class="row">
+                        <div class="mb-3 col-12 col-md-6">
+                            <label for="first_name" class="form-label text-capitalize">имя</label>
+                            <input type="text" class="form-control registration_form_input rounded-0 py-2"
+                                   id="first_name" name="first_name"
+                                   placeholder="Имя">
+                        </div>
+                        <div class="mb-3 col-12 col-md-6">
+                            <label for="last_name" class="form-label text-capitalize">Фамилия</label>
+                            <input type="text" class="form-control registration_form_input rounded-0 py-2"
+                                   id="last_name" name="last_name"
+                                   placeholder="Фамилия">
+                        </div>
+                        <div class="mb-3 col-12 col-md-6">
+                            <label for="username" class="form-label text-title">Номер телефона</label>
+                            <input type="text" class="form-control registration_form_input rounded-0 py-2" id="username"
+                                   name="phone_number"
+                                   placeholder="Номер телефона" autocomplete="off" value="">
+                        </div>
+                        <div class="mb-3 col-12 col-md-6">
+                            <label for="password" class="form-label text-title">Пароль</label>
+                            <input type="password" class="form-control registration_form_input rounded-0 py-2"
+                                   id="password" name="password"
+                                   placeholder="Пароль">
+                        </div>
+                        <div class="mb-3 col-12 col-md-6">
+                            <label for="email" class="form-label text-title">Адрес электронной почты</label>
+                            <input type="email" class="form-control registration_form_input rounded-0 py-2" id="email"
+                                   name="email"
+                                   placeholder="Адрес электронной почты" autocomplete="off" value="">
+                        </div>
+                        <div class="mb-3 col-12 col-md-6">
+                            <label for="confirm_password" class="form-label text-title">Подтвердите пароль</label>
+                            <input type="password" class="form-control registration_form_input rounded-0 py-2"
+                                   id="confirm_password" name="confirm_password"
+                                   placeholder="Подтвердите пароль">
+                        </div>
+                        <div class="mb-3 col-12">
+                            <label for="confirm_password" class="form-label text-title">Образовательное
+                                учреждениеь</label>
+                            <input type="text" class="form-control registration_form_input rounded-0 py-2"
+                                   id="confirm_password" name="education"
+                                   placeholder="Образовательное учреждение">
+                            <span class="reg_span py-3 d-block">краткое наименование образовательного учреждения</span>
+                        </div>
+                        <div class="mb-3 col-12">
+                            <label for="confirm_password" class="form-label text-title">РЕГИОН (область, республика,
+                                ...)</label>
+                            <select class="form-select registration_form_input rounded-0 py-2"
+                                    aria-label="Default select example" name="user_region">
+                                    <option value="">Toshkent</option>
+                                    <option value="">Jizzax</option>
+                                    <option value="">...</option>
+
+                            </select>
+                            <span class="reg_span py-3 d-block">выберите значения</span>
+                            <div class="form-check d-flex justify-content-start pt-4">
+                                <input class="form-check-input registration_checkbox d-block me-3" type="checkbox"
+                                       value="" id="flexCheckChecked">
+                                <label class="form-check-label reg_checkbox_text d-block w-75" for="flexCheckChecked">
+                                    Даю согласие образовательному порталу "НИКА" на обработку моих персональных данных *
+                                    Нажимая кнопку «РЕГИСТРАЦИЯ», я принимаю условия Пользовательского соглашения и даю
+                                    своё
+                                    согласие Образовательному порталу «BEFIRST» (сайт https://оценика.уз) на обработку
+                                    моих
+                                    персональных данных, в соответствии с ...
+                                </label>
+                            </div>
+                            <div class="social_auth mt-5 text-center">
+                                <p class="reg_checkbox_text">или зарегистрируйтесь с</p>
+                                <a type="button" class="btn btn-outline-success px-4 py-3" style="font-size: 20px"
+                                   href="">
+                                    <i class="bi bi-google me-2" style="font-size: 30px; vertical-align: middle;"></i>
+                                    <b>Зарегистрироваться через Google</b>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mb-5">
+
+                    <button class="registration_button rounded-5" type="submit">ГОТОВО</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

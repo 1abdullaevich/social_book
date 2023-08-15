@@ -1,0 +1,64 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="contact_main pb-md-5">
+        <div class="container main_padding">
+            <div class="main_text_contact text-center text-md-start">
+                <h1 class="fs_70">КОНТАКТЫ</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 pt-lg-5">
+                    <img src="{% static 'main/img/contacts_icon.svg' %}" alt="" class="img-fluid">
+                </div>
+                <div class="col-lg-4 offset-lg-2 text-center mb-5 mb-md-0">
+                    <img src="{% static 'main/img/contact_logo.svg' %}" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="contact_form p-3 p-sm-4 px-md-5 py-md-5">
+                <div class="row">
+                    <div class="col-12 col-lg-6 mb-3 mb-lg-0 contact_map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11980.035172590655!2d69.203646!3d41.3521626!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8d4a0dce8309%3A0x43e0a115d4b09d1a!2sBobir%20Akilkhanov%20Tech%20Academy!5e0!3m2!1sru!2s!4v1678289300224!5m2!1sru!2s"
+                                width="100%" height="642" style="border:0;" allowfullscreen="" loading="eager"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <h2 class="mb-5">КОНТАКТЫ</h2>
+                        <p class="contact_loaction mb-3">
+                            4 University street, Tashkent 100194, Узбекистан
+                        </p>
+                        <div class="contact_phone">
+                            <a href="tel:+998901234567" class="d-block mb-3">+99890 123-45-67</a>
+                            <a href="tel:+998901234567" class="d-block mb-3">+99890 123-45-67</a>
+                            <a href="mailto:noemial@gmail.com" class="d-block">noemail@gmail.com</a>
+                        </div>
+                        <form class="pt-4" action="" method="post">
+                            {% csrf_token %}
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control rounded-0" id="name"
+                                       placeholder="Имя" name="name">
+                                <label for="floatingInput">Имя</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control rounded-0" id="floatingInput"
+                                       placeholder="почта" name="email">
+                                <label for="floatingInput">Адрес электронной почты</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" rows="6"  placeholder="Оставьте комментарий здесь"
+                                          id="floatingTextarea" name="comment"></textarea>
+                                <label for="floatingTextarea">Cообщения</label>
+                            </div>
+                            {{ form.errors }}
+                            <div class="d-flex justify-content-end">
+                                <button class="btn btn-success px-4 py-2" type="submit">ОТПРАВИТ</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

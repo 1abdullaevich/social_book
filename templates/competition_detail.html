@@ -1,0 +1,35 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="competition works">
+    <div class="container">
+        <div class="image_field py-5 d-flex justify-content-center">
+            <img src="{% static 'main/img/competition.svg' %}" alt="Competition image">
+        </div>
+
+        <div class="competition_detail d-flex justify-content-center">
+            <div class="frame">
+                <h2 class="font-inter mb-4">Competition title</h2>
+                <p class="font-inter">
+                    Competition description
+                </p>
+                    <a href="#" class="btn btn-warning border-0">регистрация на конкурс</a>
+                <div class="deadline d-flex justify-content-between my-3">
+                    <span class="font-inter">Дата начала конкурса: 20.08.2023</span>
+                    <span class="font-inter">Дата окончания конкурса: 24.08.2023</span>
+                </div>
+
+                <div class="deadline_time d-grid justify-content-center my-5">
+                    <h4 class="font-inter"> deadline time </h4>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

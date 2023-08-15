@@ -1,0 +1,100 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="unver_box py-4">
+        <div class="container">
+            <div class="header_content main_padding mb-4">
+                <h1 class="fs_70">ОПЛАТА</h1>
+            </div>
+            <div class="payment_form px-3 py-5 px-sm-4 p-lg-5">
+                <h2>Оформление оплаты</h2>
+                <form action="" class="row">
+                    <div class="col-md-6 col-lg-5">
+                        <div class="mb-4 mb-lg-5">
+{#                            <input type="text" class="form-control rounded-0 p-3 p-md-4" id="name"#}
+{#                                   placeholder="Ваше имя">#}
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control rounded-0 text-capitalize" id="floatingInput name"
+                                       placeholder="Ваше имя">
+                                <label for="floatingInput">Ваше имя</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-5 offset-lg-2">
+                        <div class="mb-4 mb-lg-5">
+{#                            <input type="text" class="form-control rounded-0 p-3 p-md-4" id="phone"#}
+{#                                   placeholder="Ваше номер телефона ">#}
+                             <div class="form-floating mb-3">
+                                <input type="text" class="form-control rounded-0" id="floatingInput"
+                                       placeholder="Ваше номер телефона">
+                                <label for="floatingInput">Ваше номер телефона</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mb-4 mb-lg-5">
+{#                            <input type="text" class="form-control rounded-0 p-3 p-md-4" id="payment_category"#}
+{#                                   placeholder="ОПЛАТА ПО КАТЕГОРИЯМИ">#}
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control rounded-0" id="floatingInput payment_category"
+                                       placeholder="Оплата по категориями">
+                                <label for="floatingInput">Оплата по категориями</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mb-4 mb-lg-5">
+{#                            <input type="text" class="form-control rounded-0 p-3 p-md-4" id="cart_number"#}
+{#                                   placeholder="НОМЕР КАРТЫ">#}
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control rounded-0" id="floatingInput payment_category"
+                                       placeholder="Номер карты">
+                                <label for="floatingInput">Номер карты</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <hr class="hr">
+                    </div>
+                    <div class="col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+                        <div class="mb-4 mb-lg-5">
+{#                            <input type="text" class="form-control rounded-0 p-3 p-md-4 text-center" id="cart_number"#}
+{#                                   placeholder="СУММА">#}
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control rounded-0" id="floatingInput payment_category"
+                                       placeholder="Сумма">
+                                <label for="floatingInput">Сумма</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mb-4 mb-lg-5 text-center">
+                            <button class="btn btn-success text-black px-5 py-3">ОПЛАТИТ</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="col-12">
+                        <span class="text-white text-uppercase">быстрый способ оплаты</span>
+                        <hr class="hr mt-0">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-md-3 d-flex justify-content-center align-items-center">
+                        <img src="{% static "main/img/apelsin.svg" %}" alt="apelsin logo" class="img-fluid">
+                    </div>
+                    <div class="col-6 col-md-3 d-flex justify-content-center align-items-center">
+                        <img src="{% static "main/img/click.svg" %}" alt="click logo" class="img-fluid">
+                    </div>
+                    <div class="col-6 col-md-3 d-flex justify-content-center align-items-center">
+                        <img src="{% static "main/img/payme.svg" %}" alt="payme logo" class="img-fluid">
+                    </div>
+                    <div class="col-6 col-md-3 d-flex justify-content-center align-items-center">
+                        <img src="{% static "main/img/anorbank.svg" %}" alt="anorbank logo" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
