@@ -74,6 +74,10 @@
                            href="#">Главная</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/competition/' %}active{% endif %}"
+                           href="/competition/">Конкурс</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {% if request.path == '/works/' %}active{% endif %}"
                            href="/works/">Работы</a>
                     </li>
