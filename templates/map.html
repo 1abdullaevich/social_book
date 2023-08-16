@@ -1,27 +1,33 @@
 {% extends 'layouts/base.html' %}
 
 {% load static %}
-
+{% block extra_css %}
+    <style>
+        td {
+            background-color: white!important;
+        }
+    </style>
+{% endblock %}
 {% block content %}
 <div class="map mt-3">
     <div class="container">
         <div class="d-flex justify-content-center pt-5">
-            <h1 class="map_title">РАБОТЫ ПО РЕГИОНАМ <br>  
+            <h1 class="map_title">РАБОТЫ ПО РЕГИОНАМ <br>
                 В 2022-2023 УЧЕБНОМ ГОДУ
             </h1>
         </div>
 
-        <div class="yellow_line my-2 my-md-5"></div>
+        <div style="width: 80%; margin: 0 auto" class="yellow_line my-2 my-md-5"></div>
 
         <div class="pt-5">
             <div class="my_table" style="overflow-x: auto;">
                 <table>
                     <tr>
-                        <th class="text-light">&#8470;</th>
-                        <th class="text-light">РЕГИОН</th>
-                        <th class="text-light">ШКОЛА</th>
-                        <th class="text-light">ДЕТ.САД</th>
-                        <th class="text-light">КОЛИЧЕСТВО</th>
+                        <th style="background-color: #F5C24D!important;" class="text-light">&#8470;</th>
+                        <th style="background-color: #F5C24D!important;" class="text-light">РЕГИОН</th>
+                        <th style="background-color: #F5C24D!important;" class="text-light">ШКОЛА</th>
+                        <th style="background-color: #F5C24D!important;" class="text-light">ДЕТ.САД</th>
+                        <th style="background-color: #F5C24D!important; border: none!important;" class="text-light">КОЛИЧЕСТВО</th>
                     </tr>
                     <tr>
                         <td>1</td>
@@ -111,9 +117,9 @@
             </div>
         </div>
 
-        <div class="yellow_line my-2 my-md-5"></div>
+        <div style="width: 80%; margin: 0 auto" class="yellow_line my-2 my-md-5"></div>
 
-        <h1 class="uz_title">УЗБЕКИСТАН</h1> 
+        <h1 class="uz_title">УЗБЕКИСТАН</h1>
 
         <div class="uz_map" style="overflow-x: auto;">
             <div class="colors_pick w-100 d-flex justify-content-end gap-4">
@@ -124,15 +130,15 @@
             </div>
 
             <div class="map_btn w-100 h-75 d-flex align-items-end justify-content-end">
-                <button class="btn d-flex gap-4">
+                <button style="background-color: #F5C24D" class="btn d-flex gap-4">
                     <img class="support_icon" src="{% static 'main/img/support_icon.svg' %}" alt="support icon">
-                        <span class="d-block">Есть вопросы? <br> 
+                        <span class="d-block">Есть вопросы? <br>
                         Спрашивайте!</span>
                 </button>
             </div>
         </div>
-        
-        
+
+
     </div>
 </div>
 {% endblock %}

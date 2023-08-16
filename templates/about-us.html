@@ -1,6 +1,19 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 
+{% block extra_css %}
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        .card > h1, .card > h3 {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+{% endblock %}
+
 {% block content %}
     <div class="about-us-content">
     <div class="container">
@@ -169,55 +182,50 @@
             <!-- some features end -->
 
             <!-- experts start -->
-            <div class="experts col-12 px-0">
-                <div class="row mx-0">
-                    <div class="col-12 d-flex justify-content-center flex-column align-items-center">
-                        <h1 class="title text-center">ЭКСПЕРТЫ</h1>
-                        <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodore
-                            et dolore magna aliqua.</p>
+            {#            <div class="experts col-12 px-0">#}
+            {#                <img data-lazy="{% static 'main/img/experts-4.png' %}"/>#}
+            {#            </div>#}
+            <div class="carousel-1 col-12 py-5 px-3 px-sm-0">
+                <h1 style="text-align: center; margin-top: -30px">Наши экспорты</h1>
+                <div class="carousel-container mt-4 d-flex w-100">
+                    <div
+                       class="card col-12 col-sm-6 col-md-4 col-lg-3 px-2 px-lg-3 bg-transparent border-0 d-flex justify-content-center"><img
+                            src="{% static 'main/img/experts-1.png' %}" class="w-100 img-fluid" alt="">
+                        <h1>Aziz Alixanov</h1>
+                        <h3>Export</h3>
                     </div>
-                    <div class="images col-12 row mx-0 px-4 px-sm-2">
-                        <div class="col-6 p-1 p-md-2 col-sm-4 col-lg-3 mt-2 ">
-                            <img src="{% static 'main/img/experts-1.png' %}" class="w-100" alt="">
-                        </div>
-                        <div class="col-12 col-sm-6 col-lg-3 mt-4">
-                            <img src="{% static 'main/img/experts-2.png' %}" class="w-100 " alt="">
-                        </div>
-                        <div class="col-12 col-sm-6 col-lg-3 mt-4">
-                            <img src="{% static 'main/img/experts-3.png' %}" class="w-100 img-fluid" alt="">
-                        </div>
-                        <div class="col-12 col-sm-6 col-lg-3 mt-4">
-                            <img src="{% static 'main/img/experts-4.png' %}" class="w-100 img-fluid" alt="">
-                        </div>
-                        <div class="divider my-3 my-lg-5"></div>
-                    </div>
-                    <div class="col-12 mb-5 expertInfo">
-                        <div class="row px-md-2 px-lg-5">
-                            <div
-                                    class="offset-xl-1 col-10 offset-1 offset-sm-2 col-sm-8 col-md-5 offset-md-0 col-xl-3 d-flex justify-content-center flex-column align-items-center">
-                                <div class="d-flex justify-content-center w-100 align-items-center">
-                                    <img src="{% static 'main/img/experts-4.png' %}"
-                                         class="w-100 teacher-img img-fluid" alt="">
-                                </div>
-                                <div class="w-100 d-flex justify-content-end">
-                                    <p class="status mt-2">
-                                        Rassom</p>
-                                </div>
-                            </div>
-                            <div class="offset-1 offset-md-0 col-10 col-md-7 col-xl-6 px-3 px-md-0">
-                                <h1 class="full-name h2 ps-md-3">Alina Karimova</h1>
-                                <p class="about-teacher ps-md-3">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A assumenda atque beatae
-                                    deserunt iure porro quibusdam. At, cum dolorem dolorum eos et fuga ipsam itaque
-                                    nulla officiis optio, qui ut.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <div
+                       class="card col-12 col-sm-6 col-md-4 col-lg-3 px-2 px-lg-3 bg-transparent border-0 d-flex justify-content-center"><img
+                            src="{% static 'main/img/experts-2.png' %}" class="w-100 img-fluid" alt="">
+                        <h1>Aziz Alixanov</h1>
+                        <h3>Export</h3></div>
+                    <div
+                       class="card col-12 col-sm-6 col-md-4 col-lg-3 px-2 px-lg-3 bg-transparent border-0 d-flex justify-content-center"><img
+                            src="{% static 'main/img/experts-3.png' %}" class="w-100 img-fluid" alt="">
+                        <h1>Aziz Alixanov</h1>
+                        <h3>Export</h3></div>
+                    <div
+                       class="card col-12 col-sm-6 col-md-4 col-lg-3 px-2 px-lg-3 bg-transparent border-0 d-flex justify-content-center"><img
+                            src="{% static 'main/img/experts-4.png' %}" class="w-100 img-fluid" alt="">
+                        <h1>Aziz Alixanov</h1>
+                        <h3>Export</h3></div>
+                </div>
+                <div class="px-2 px-lg-3">
+                    <div class="divider mt-4"></div>
                 </div>
             </div>
             <!-- experts end -->
 
         </div>
     </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        $('.lazy').slick({
+            lazyLoad: 'ondemand',
+            slidesToShow: 3,
+            slidesToScroll: 1
+        });
+    </script>
 {% endblock %}

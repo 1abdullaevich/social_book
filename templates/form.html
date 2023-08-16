@@ -1,6 +1,26 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 
+{% block extra_css %}
+    <style>
+        .podrobnoe {
+            background-color: #D2D2D2 !important;
+        }
+
+        .ok {
+            border: none;
+            transition: 0.5s;
+        }
+
+        .ok:hover {
+            color: black !important;
+            background-color: #D2D2D2 !important;
+            transform: scaleY(1.1) !important;
+        }
+
+    </style>
+{% endblock %}
+
 {% block content %}
     <section class="konkrus">
         <div class="container">
@@ -15,7 +35,7 @@
                             labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                         </p>
                         <div class="d-flex align-items-center my-5">
-                            <button class="btn px-5 py-2">подробное</button>
+                            <button class="btn podrobnoe px-5 py-2">подробное</button>
                         </div>
                     </div>
                 </div>
@@ -44,32 +64,11 @@
                             </div>
                             <div class="nd_side d-flex col-lg-12">
                                 <div class="form-floating w-100">
-                                    <select class="form-select pb-0 pt-2" id="floatingSelect"
-                                            aria-label="Floating label select example">
-                                        <option selected></option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                    </select>
-                                    <label for="floatingSelect">Лет</label>
+                                    <input style="background-color: #EAE9EF!important;" type="text" class="form-control"
+                                           id="floatingInput"> <label for="floatingSelect">Лет</label>
                                 </div>
                             </div>
                             <div class="nd_side d-flex col-lg-12">
-
-                                <div class="form-floating w-100">
-                                    <select class="form-select pb-0 pt-2" id="floatingSelect"
-                                            aria-label="Floating label select example">
-                                        <option selected></option>
-                                        <option value="5">smth</option>
-                                        <option value="6">something</option>
-                                        <option value="7">Lorem</option>
-                                    </select>
-                                    <label for="floatingSelect">Категория конкурс</label>
-                                </div>
-                            </div>
-                            <div class="nd_side d-flex col-lg-12">
-
                                 <div class="form-floating w-100">
                                     <select class="form-select pb-0 pt-2" id="floatingSelect"
                                             aria-label="Floating label select example">
@@ -79,7 +78,6 @@
                                     </select>
                                     <label for="floatingSelect">Город</label>
                                 </div>
-
                             </div>
                             <div class="st_side d-flex col-12 col-lg-12" id="st_side">
                                 <div class="form-floating col-12 mb-3">
@@ -91,8 +89,10 @@
                             <div class="gender col-12 col-lg-2 pb-2 d-grid justify-content-center align-items-center">
                                 <img src="{% static 'main/img/boy.png' %}" alt="">
                                 <img src="{% static 'main/img/girl.png' %}" alt="">
-                                <input type="radio" name="gender"/>
-                                <input type="radio" name="gender"/>
+                                <input class="form-check-input ms-5" type="checkbox" id="checkboxNoLabel" value=""
+                                       aria-label="...">
+                                <input class="form-check-input ms-5" type="checkbox" id="checkboxNoLabel" value=""
+                                       aria-label="...">
                             </div>
 
                             <div class="form-floating mb-3 col-12 col-lg-12">
@@ -100,13 +100,8 @@
                                           id="floatingTextarea2Disabled"></textarea>
                                 <label for="floatingTextarea2Disabled">Ваш коммент...</label>
                             </div>
-
-                            <div class="zapomnit col-12 col-lg-6 d-flex align-items-center">
-                                <input type="checkbox" name="remember"/>
-                                <p>Запомнить</p>
-                            </div>
                             <div class="d-flex align-items-center">
-                                <button class="btn btn-success text-dark  py-2">OK</button>
+                                <button class="btn ok btn-success text-dark  py-2">OK</button>
                             </div>
                         </form>
                     </div>

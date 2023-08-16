@@ -39,8 +39,15 @@ class ResultView(TemplateView):
     template_name = 'map.html'
 
 
+class RulesView(TemplateView):
+    template_name = 'rules.html'
+
+
 class ProfileView(TemplateView):
     template_name = 'profile.html'
+
+class GalleryView(TemplateView):
+    template_name = 'works.html'
 
 
 class RegistrationView(TemplateView):
